@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CineBox — Seus Filmes Favoritos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="navbar__left">
+      <button class="btn-menu" id="btnMenu" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="#" class="logo">
+        <i class="fa-solid fa-film"></i>
+        <span>CineBox</span>
+      </a>
+    </div>
+
+    <div class="navbar__center">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Pesquisar filmes..." autocomplete="off"/>
+        <button class="btn-search" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="navbar__right">
+      <button class="btn-icon" aria-label="Notificações">
+        <i class="fa-solid fa-bell"></i>
+      </button>
+      <div class="avatar" title="Meu perfil">M</div>
+    </div>
+  </header>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar__nav">
+      <a href="#" class="sidebar__item active">
+        <i class="fa-solid fa-house"></i><span>Início</span>
+      </a>
+      <a href="#" class="sidebar__item">
+        <i class="fa-solid fa-fire"></i><span>Em Alta</span>
+      </a>
+      <a href="#" class="sidebar__item">
+        <i class="fa-solid fa-star"></i><span>Favoritos</span>
+      </a>
+      <a href="#" class="sidebar__item">
+        <i class="fa-solid fa-clock-rotate-left"></i><span>Histórico</span>
+      </a>
+      <a href="#" class="sidebar__item">
+        <i class="fa-solid fa-list"></i><span>Listas</span>
+      </a>
+      <hr class="sidebar__divider"/>
+      <p class="sidebar__label">Gêneros</p>
+      <a href="#" class="sidebar__item" data-filter="comedia">
+        <i class="fa-solid fa-face-laugh-squint"></i><span>Comédia</span>
+      </a>
+      <a href="#" class="sidebar__item" data-filter="acao">
+        <i class="fa-solid fa-explosion"></i><span>Ação</span>
+      </a>
+      <a href="#" class="sidebar__item" data-filter="drama">
+        <i class="fa-solid fa-masks-theater"></i><span>Drama</span>
+      </a>
+      <a href="#" class="sidebar__item" data-filter="animacao">
+        <i class="fa-solid fa-wand-magic-sparkles"></i><span>Animação</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main class="main" id="main">
+
+    <!-- Filtros / Chips -->
+    <div class="chips" id="chips">
+      <button class="chip active" data-filter="todos">Todos</button>
+      <button class="chip" data-filter="comedia">Comédia</button>
+      <button class="chip" data-filter="acao">Ação</button>
+      <button class="chip" data-filter="drama">Drama</button>
+      <button class="chip" data-filter="animacao">Animação</button>
+      <button class="chip" data-filter="ficcao">Ficção Científica</button>
+      <button class="chip" data-filter="terror">Terror</button>
+    </div>
+
+    <!-- Grade de Cards -->
+    <section class="grid" id="movieGrid">
+
+      <!-- ===== CARD 1 — DEBI E LOIDE (IFRAME) ===== -->
+      <article class="card" data-genre="comedia" data-title="Debi e Loide">
+        <div class="card__media">
+          <iframe
+            class="card__iframe"
+            src="https://www.youtube.com/embed/j18RMmxT78c"
+            title="Debi e Loide — Trailer Oficial"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="card__info">
+          <div class="card__avatar" style="background:#e53935;">D</div>
+          <div class="card__text">
+            <h3 class="card__title">Debi e Loide <span class="card__badge">Trailer</span></h3>
+            <p class="card__meta">Comédia &bull; 1994 &bull; Jim Carrey &amp; Jeff Daniels</p>
+            <p class="card__views"><i class="fa-solid fa-eye"></i> 2,4 mi de visualizações</p>
+          </div>
+          <button class="card__more" aria-label="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+      </article>
+
+      <!-- ===== CARD 2 — DEBI E LOIDE 2 (IFRAME) ===== -->
+      <article class="card" data-genre="comedia" data-title="Debi e Loide 2">
+        <div class="card__media">
+          <iframe
+            class="card__iframe"
+            src="https://www.youtube.com/embed/bIqvQFqPavA"
+            title="Debi e Loide 2 — Trailer Oficial"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="card__info">
+          <div class="card__avatar" style="background:#8e24aa;">D</div>
+          <div class="card__text">
+            <h3 class="card__title">Debi e Loide 2 <span class="card__badge">Trailer</span></h3>
+            <p class="card__meta">Comédia &bull; 2014 &bull; Jim Carrey &amp; Jeff Daniels</p>
+            <p class="card__views"><i class="fa-solid fa-eye"></i> 1,1 mi de visualizações</p>
+          </div>
+          <button class="card__more" aria-label="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+      </article>
+
+      <!-- ===== CARD 3 — PLACEHOLDER (Ação) ===== -->
+      <article class="card" data-genre="acao" data-title="Missão Impossível">
+        <div class="card__media card__thumb" style="background: linear-gradient(135deg,#1a237e,#283593);">
+          <div class="card__overlay">
+            <i class="fa-solid fa-play card__play-icon"></i>
+            <span class="card__duration">2h 10min</span>
+          </div>
+          <img src="https://img.youtube.com/vi/XiG4-3Dm6GE/hqdefault.jpg"
+               alt="Missão Impossível" class="card__img" loading="lazy"/>
+        </div>
+        <div class="card__info">
+          <div class="card__avatar" style="background:#1565c0;">M</div>
+          <div class="card__text">
+            <h3 class="card__title">Missão Impossível</h3>
+            <p class="card__meta">Ação &bull; 1996 &bull; Tom Cruise</p>
+            <p class="card__views"><i class="fa-solid fa-eye"></i> 5,8 mi de visualizações</p>
+          </div>
+          <button class="card__more" aria-label="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+      </article>
+
+      <!-- ===== CARD 4 — PLACEHOLDER (Drama) ===== -->
+      <article class="card" data-genre="drama" data-title="Forrest Gump">
+        <div class="card__media card__thumb">
+          <div class="card__overlay">
+            <i class="fa-solid fa-play card__play-icon"></i>
+            <span class="card__duration">2h 22min</span>
+          </div>
+          <img src="https://img.youtube.com/vi/bLvqoHBptjg/hqdefault.jpg"
+               alt="Forrest Gump" class="card__img" loading="lazy"/>
+        </div>
+        <div class="card__info">
+          <div class="card__avatar" style="background:#2e7d32;">F</div>
+          <div class="card__text">
+            <h3 class="card__title">Forrest Gump</h3>
+            <p class="card__meta">Drama &bull; 1994 &bull; Tom Hanks</p>
+            <p class="card__views"><i class="fa-solid fa-eye"></i> 9,2 mi de visualizações</p>
+          </div>
+          <button class="card__more" aria-label="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+      </article>
+
+      <!-- ===== CARD 5 — PLACEHOLDER (Animação) ===== -->
+      <article class="card" data-genre="animacao" data-title="O Rei Leão">
+        <div class="card__media card__thumb">
+          <div class="card__overlay">
+            <i class="fa-solid fa-play card__play-icon"></i>
+            <span class="card__duration">1h 28min</span>
+          </div>
+          <img src="https://img.youtube.com/vi/4sj1MT05lAA/hqdefault.jpg"
+               alt="O Rei Leão" class="card__img" loading="lazy"/>
+        </div>
+        <div class="card__info">
+          <div class="card__avatar" style="background:#f57f17;">R</div>
+          <div class="card__text">
+            <h3 class="card__title">O Rei Leão</h3>
+            <p class="card__meta">Animação &bull; 1994 &bull; Disney</p>
+            <p class="card__views"><i class="fa-solid fa-eye"></i> 14 mi de visualizações</p>
+          </div>
+          <button class="card__more" aria-label="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+      </article>
+
+      <!-- ===== CARD 6 — PLACEHOLDER (Ficção) ===== -->
+      <article class="card" data-genre="ficcao" data-title="Matrix">
+        <div class="card__media card__thumb">
+          <div class="card__overlay">
+            <i class="fa-solid fa-play card__play-icon"></i>
+            <span class="card__duration">2h 16min</span>
+          </div>
+          <img src="https://img.youtube.com/vi/vKQi3bBA1y8/hqdefault.jpg"
+               alt="Matrix" class="card__img" loading="lazy"/>
+        </div>
+        <div class="card__info">
+          <div class="card__avatar" style="background:#00695c;">X</div>
+          <div class="card__text">
+            <h3 class="card__title">Matrix</h3>
+            <p class="card__meta">Ficção Científica &bull; 1999 &bull; Keanu Reeves</p>
+            <p class="card__views"><i class="fa-solid fa-eye"></i> 11 mi de visualizações</p>
+          </div>
+          <button class="card__more" aria-label="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+      </article>
+
+      <!-- ===== CARD 7 — PLACEHOLDER (Terror) ===== -->
+      <article class="card" data-genre="terror" data-title="O Iluminado">
+        <div class="card__media card__thumb">
+          <div class="card__overlay">
+            <i class="fa-solid fa-play card__play-icon"></i>
+            <span class="card__duration">2h 26min</span>
+          </div>
+          <img src="https://img.youtube.com/vi/5Cb3ik6zP2I/hqdefault.jpg"
+               alt="O Iluminado" class="card__img" loading="lazy"/>
+        </div>
+        <div class="card__info">
+          <div class="card__avatar" style="background:#b71c1c;">I</div>
+          <div class="card__text">
+            <h3 class="card__title">O Iluminado</h3>
+            <p class="card__meta">Terror &bull; 1980 &bull; Jack Nicholson</p>
+            <p class="card__views"><i class="fa-solid fa-eye"></i> 7,3 mi de visualizações</p>
+          </div>
+          <button class="card__more" aria-label="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+      </article>
+
+      <!-- ===== CARD 8 — PLACEHOLDER (Comédia) ===== -->
+      <article class="card" data-genre="comedia" data-title="Ace Ventura">
+        <div class="card__media card__thumb">
+          <div class="card__overlay">
+            <i class="fa-solid fa-play card__play-icon"></i>
+            <span class="card__duration">1h 26min</span>
+          </div>
+          <img src="https://img.youtube.com/vi/YMjBBnVVMkk/hqdefault.jpg"
+               alt="Ace Ventura" class="card__img" loading="lazy"/>
+        </div>
+        <div class="card__info">
+          <div class="card__avatar" style="background:#e65100;">A</div>
+          <div class="card__text">
+            <h3 class="card__title">Ace Ventura</h3>
+            <p class="card__meta">Comédia &bull; 1994 &bull; Jim Carrey</p>
+            <p class="card__views"><i class="fa-solid fa-eye"></i> 6,7 mi de visualizações</p>
+          </div>
+          <button class="card__more" aria-label="Mais opções"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Mensagem de nenhum resultado -->
+    <div class="no-results hidden" id="noResults">
+      <i class="fa-solid fa-film-slash"></i>
+      <p>Nenhum filme encontrado.</p>
+    </div>
+
+  </main>
+
+  <!-- ===== MODAL DE PLAYER ===== -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal__close" id="modalClose" aria-label="Fechar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal__player" id="modalPlayer"></div>
+      <div class="modal__body">
+        <h2 class="modal__title" id="modalTitle"></h2>
+        <p class="modal__meta" id="modalMeta"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
